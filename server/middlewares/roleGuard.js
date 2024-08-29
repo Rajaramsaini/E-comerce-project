@@ -1,0 +1,16 @@
+const roleGuard = (allowedRole)=>{
+return(req,res,next)=>{
+
+    // if(req.userRole == allowedRole)  {
+        if(allowedRole.includes(req.userRole)){
+        next()
+    }else{
+        res.send("Not authorized for this user")
+
+
+    }
+};
+
+};
+
+module.exports = roleGuard; 
